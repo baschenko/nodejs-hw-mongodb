@@ -5,7 +5,7 @@ import ctrlWrapper from '../utils/ctrlWrapper.js';
 import validateBody from '../utils/validateBody.js';
 import {
   contactAddSchema,
-  // contactUpdateSchema,
+  contactUpdateSchema,
 } from '../validation/contacts.js';
 import { isValidId } from '../middlewares/isValidId.js';
 
@@ -28,7 +28,7 @@ contactRouter.post(
 contactRouter.patch(
   '/:contactId',
   isValidId,
-  // validateBody(contactUpdateSchema),
+  validateBody(contactUpdateSchema),
   ctrlWrapper(contactsController.patchContactController),
 );
 
