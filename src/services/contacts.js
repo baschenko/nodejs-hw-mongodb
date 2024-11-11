@@ -9,10 +9,9 @@ export const getContacts = async ({
   filter = {},
 }) => {
   const skip = (page - 1) * perPage;
-  const query = ContactsCollection.find()
-    .skip(skip)
-    .limit(perPage)
-    .sort({ [sortBy]: sortOrder });
+
+  const query = ContactsCollection.find();
+
   if (filter.type) {
     query.where('contactType').equals(filter.type);
   }
@@ -20,12 +19,18 @@ export const getContacts = async ({
   if (filter.favourite) {
     query.where('isFavourite').equals(filter.favourite);
   }
-  const data = await query;
 
   const totalItems = await ContactsCollection.find()
     .merge(query)
     .countDocuments();
-  const paginationData = calculatePaginationData({ totalItems, page, perPage });
+
+  const data = await query
+    .skip(skip)
+    .limit(perPage)
+    .sort({ [sortBy]: sortOrder });
+
+  const paginationData = calculatePaginationData(totalItems, page, perPage);
+
   return {
     data,
     ...paginationData,
@@ -39,8 +44,6 @@ export const addContact = (payload) => ContactsCollection.create(payload);
 export const updateContact = async ({ _id, payload, options = {} }) => {
   const data = await ContactsCollection.findOneAndUpdate({ _id }, payload, {
     ...options,
-    // new: true,
-    // runValidators: true,
   });
   return data;
 };
