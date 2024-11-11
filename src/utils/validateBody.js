@@ -8,7 +8,11 @@ const validateBody = (schema) => {
       });
       next();
     } catch (error) {
-      return next(createHttpError(400, error.message));
+      return next(
+        createHttpError(400, error.message, {
+          errors: error.details,
+        }),
+      );
     }
   };
   return func;
