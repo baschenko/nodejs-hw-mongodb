@@ -36,6 +36,11 @@ const contactSchema = new Schema(
       minLength: 3,
       maxLength: 20,
     },
+    userId: {
+      type: Schema.Types.ObjectId,
+      ref: 'user',
+      required: true,
+    },
   },
   { versionKey: false, timestamps: true },
 );
