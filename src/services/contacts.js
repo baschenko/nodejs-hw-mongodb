@@ -41,14 +41,24 @@ export const getContacts = async ({
   };
 };
 
-export const getContactById = (id) => ContactsCollection.findById(id);
+export const getContactById = ({ contactId, userId }) => {
+  const user = ContactsCollection.findOne({
+    _id: contactId,
+    userId: userId,
+  });
+  return user;
+};
 
 export const addContact = (payload) => ContactsCollection.create(payload);
 
-export const updateContact = async ({ _id, payload, options = {} }) => {
-  const data = await ContactsCollection.findOneAndUpdate({ _id }, payload, {
-    ...options,
-  });
+export const updateContact = async ({ _id, userId, payload, options = {} }) => {
+  const data = await ContactsCollection.findOneAndUpdate(
+    { _id, userId },
+    payload,
+    {
+      ...options,
+    },
+  );
   return data;
 };
 
