@@ -36,6 +36,9 @@ const contactSchema = new Schema(
       minLength: 3,
       maxLength: 20,
     },
+    photo: {
+      type: String,
+    },
     userId: {
       type: Schema.Types.ObjectId,
       ref: 'user',
