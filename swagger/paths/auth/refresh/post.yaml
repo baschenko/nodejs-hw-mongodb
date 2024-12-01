@@ -3,8 +3,7 @@ tags:
 summary: Refresh session
 operationId: refresh
 description: 'Refresh the session with a refresh token from the cookie'
-security:
-  - ApiKeyAuth: []
+security: []
 responses:
   '200':
     description: Refresh session
