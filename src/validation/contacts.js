@@ -20,7 +20,7 @@ export const contactAddSchema = Joi.object({
     'string.max': 'Username should have at most {#limit} characters',
     'any.required': 'Username is required',
   }),
-  isFavourite: Joi.boolean(),
+  isFavorite: Joi.boolean(),
   contactType: Joi.string().valid(...typeList),
 });
 
@@ -28,6 +28,6 @@ export const contactUpdateSchema = Joi.object({
   name: Joi.string().min(3).max(20),
   phoneNumber: Joi.string().min(3).max(20),
   email: Joi.string().min(3).max(20),
-  isFavourite: Joi.boolean(),
+  isFavorite: Joi.boolean(),
   contactType: Joi.string().valid(...typeList),
 });

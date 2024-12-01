@@ -11,12 +11,12 @@ const parseString = (query, list) => {
   if (isQuery(query)) return query;
 };
 
-export const parseContactFilterParams = ({ type, favourite }) => {
+export const parseContactFilterParams = ({ type, favorite }) => {
   const parsedContactType = parseString(type, typeList);
-  const parsedIsFavourite = parseString(favourite, boolList);
+  const parsedIsFavorite = parseString(favorite, boolList);
 
   return {
     type: parsedContactType,
-    favourite: parsedIsFavourite,
+    favorite: parsedIsFavorite,
   };
 };

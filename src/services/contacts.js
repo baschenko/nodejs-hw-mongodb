@@ -16,8 +16,8 @@ export const getContacts = async ({
     query.where('contactType').equals(filter.type);
   }
 
-  if (filter.favourite) {
-    query.where('isFavourite').equals(filter.favourite);
+  if (filter.favorite) {
+    query.where('isFavorite').equals(filter.favorite);
   }
 
   if (filter.userId) {

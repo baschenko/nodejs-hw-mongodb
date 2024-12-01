@@ -9,3 +9,5 @@ export const SMTP = {
 };
 
 export const TEMPLATES_DIR = path.join(process.cwd(), 'src', 'templates');
+
+export const SWAGGER_PATH = path.resolve('docs', 'swagger.json');

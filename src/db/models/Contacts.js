@@ -7,8 +7,8 @@ const contactSchema = new Schema(
     name: {
       type: String,
       required: true,
-      // minLength: 3,
-      // maxLength: 20,
+      minLength: 3,
+      maxLength: 20,
     },
     phoneNumber: {
       type: String,
@@ -23,7 +23,7 @@ const contactSchema = new Schema(
       minLength: 3,
       maxLength: 20,
     },
-    isFavourite: {
+    isFavorite: {
       type: Boolean,
       default: false,
       required: false,
@@ -56,7 +56,7 @@ export const sortByList = [
   'name',
   'phoneNumber',
   'email',
-  'isFavourite',
+  'isFavorite',
   'contactType',
 ];
 
