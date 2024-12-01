@@ -658,11 +658,7 @@
         "summary": "Refresh session",
         "operationId": "refresh",
         "description": "Refresh the session with a refresh token from the cookie",
-        "security": [
-          {
-            "ApiKeyAuth": []
-          }
-        ],
+        "security": [],
         "responses": {
           "200": {
             "description": "Refresh session",
@@ -715,11 +711,7 @@
         "summary": "Logout session",
         "operationId": "logout",
         "description": "Logout the session with a sessionId from the cookie",
-        "security": [
-          {
-            "ApiKeyAuth": []
-          }
-        ],
+        "security": [],
         "responses": {
           "204": {
             "description": "Logout session"
