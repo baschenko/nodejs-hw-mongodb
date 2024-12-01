@@ -13,7 +13,7 @@ content:
           example: 401
         message:
           type: string
-          example: UnauthorizedError
+          example: SomethingWentWrong
         data:
           type: object
           required:
@@ -21,4 +21,4 @@ content:
           properties:
             message:
               type: string
-              example: 'Authorization header missing'
+              example: 'Session not found or Session token expired'

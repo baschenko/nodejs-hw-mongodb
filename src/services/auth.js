@@ -44,12 +44,12 @@ export const login = async ({ email, password }) => {
   const user = await UserCollection.findOne({ email });
 
   if (!user) {
-    throw createHttpError(401, 'Email or passport invalid');
+    throw createHttpError(401, 'Email or password invalid');
   }
-  const passportCompare = await bcrypt.compare(password, user.password);
+  const passwordCompare = await bcrypt.compare(password, user.password);
 
-  if (!passportCompare) {
-    throw createHttpError(401, 'Email or passport invalid');
+  if (!passwordCompare) {
+    throw createHttpError(401, 'Email or password invalid');
   }
   await SessionCollection.deleteOne({ userId: user._id });
 

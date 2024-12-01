@@ -1,0 +1,12 @@
+tags:
+  - Auth
+summary: Logout session
+operationId: logout
+description: 'Logout the session with a sessionId from the cookie'
+security:
+  - ApiKeyAuth: []
+responses:
+  '204':
+    description: Logout session
+  '400':
+    $ref: '../../../components/responses/400.yaml'
