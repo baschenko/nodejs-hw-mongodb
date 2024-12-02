@@ -4,7 +4,7 @@ summary: Logout session
 operationId: logout
 description: 'Logout the session with a sessionId from the cookie'
 security:
-  - bearerAuth: []
+  - cookieAuth: []
 responses:
   '204':
     description: Logout session

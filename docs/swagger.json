@@ -660,7 +660,7 @@
         "description": "Refresh the session with a refresh token from the cookie",
         "security": [
           {
-            "bearerAuth": []
+            "cookieAuth": []
           }
         ],
         "responses": {
@@ -717,7 +717,7 @@
         "description": "Logout the session with a sessionId from the cookie",
         "security": [
           {
-            "bearerAuth": []
+            "cookieAuth": []
           }
         ],
         "responses": {
@@ -875,10 +875,10 @@
         "type": "http",
         "scheme": "bearer"
       },
-      "ApiKeyAuth": {
+      "cookieAuth": {
         "type": "apiKey",
         "in": "cookie",
-        "name": "refreshToken"
+        "name": "refreshToken, sessionId"
       },
       "openId": {
         "type": "openIdConnect",

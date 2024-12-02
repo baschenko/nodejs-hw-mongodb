@@ -4,7 +4,7 @@ summary: Refresh session
 operationId: refresh
 description: 'Refresh the session with a refresh token from the cookie'
 security:
-  - bearerAuth: []
+  - cookieAuth: []
 responses:
   '200':
     description: Refresh session
