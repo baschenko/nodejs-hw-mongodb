@@ -658,11 +658,7 @@
         "summary": "Refresh session",
         "operationId": "refresh",
         "description": "Refresh the session with a refresh token from the cookie",
-        "security": [
-          {
-            "cookieAuth": []
-          }
-        ],
+        "security": [],
         "responses": {
           "200": {
             "description": "Refresh session",
@@ -715,11 +711,7 @@
         "summary": "Logout session",
         "operationId": "logout",
         "description": "Logout the session with a sessionId from the cookie",
-        "security": [
-          {
-            "cookieAuth": []
-          }
-        ],
+        "security": [],
         "responses": {
           "204": {
             "description": "Logout session"
@@ -874,11 +866,6 @@
       "bearerAuth": {
         "type": "http",
         "scheme": "bearer"
-      },
-      "cookieAuth": {
-        "type": "apiKey",
-        "in": "cookie",
-        "name": "refreshToken, sessionId"
       },
       "openId": {
         "type": "openIdConnect",
