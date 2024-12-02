@@ -3,7 +3,8 @@ tags:
 summary: Logout session
 operationId: logout
 description: 'Logout the session with a sessionId from the cookie'
-security: []
+security:
+  - bearerAuth: []
 responses:
   '204':
     description: Logout session
